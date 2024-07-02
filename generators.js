@@ -1,7 +1,7 @@
 window.addEventListener("error", e => alert(e.message))
 
 const genRandom = seed => sfc32(...cyrb128(seed));
-export const seed = new URLSearchParams(window.location.search).get("code") || (window.location.href = "/?code=" + Date.now().toString(36));
+export const seed = new URLSearchParams(window.location.search).get("code") || (window.location.href = window.location.href.split("?")[0] + "?code=" + Date.now().toString(36));
 console.log(seed)
 Math.random = genRandom(seed);
 

@@ -23,7 +23,7 @@ function createElement(type, props, ...children) {
 
 document.body.appendChild(createElement("div", { className: "seed" }, `Code: ${seed}`, createElement("button", {
     className: "newCode",
-    onclick: e => window.location.href = "/?code=" + Date.now().toString(36)
+    onclick: e => window.location.href = window.location.href.split("?")[0] + "?code=" + Date.now().toString(36)
 }, "New Code"), createElement("button", {
     className: "check",
     onclick: e => alert(check())
@@ -34,7 +34,7 @@ document.body.appendChild(createElement("div", { className: "seed" }, `Code: ${s
         const a = new URLSearchParams();
         a.set("q", e.target[0].value);
         a.set("code", Date.now().toString(36))
-        window.location.href = "/?" + a;
+        window.location.href = window.location.href.split("?")[0] + "/?" + a;
         return false;
     }
 }, createElement("input", {
