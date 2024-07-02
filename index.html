@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Computer Science UIL Written Test</title>
+        <script type="module" src="script.js" defer></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Courier+New');
+            @import url('https://fonts.googleapis.com/css?family=Calibri');
+            * {
+                font-family: Calibri;
+                /*font-size: 0.875rem;*/
+            }
+            body {
+                margin: 75px;
+                white-space: pre-wrap;
+            }
+            .seed {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                display: flex;
+                flex-direction: column;
+            }
+            .uilPage {
+                user-select: none;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+                max-width: 100vh;
+                margin-inline: auto
+            }
+            .uilPage > div + div {
+                border-top: 1px solid black;
+            }
+            .questionContainer {
+                /*border: 1px solid black;*/
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .questionContainer:before {
+                content: attr(data-question);
+                position: absolute;
+                background: black;
+                color: white;
+                font-size: 12px;
+                FONT-WEIGHT: 600;
+                width: 75px;
+                padding-inline: 5px;
+            }
+            .question {
+                margin-top: 0.875rem;
+                font-size: 0.875rem;
+            }
+            .code {
+                font-family: Courier New;
+                word-wrap: break-word;
+                font-size: 1rem;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .questionContainer > * {
+                width: 50%;
+                flex: 1 1 auto;
+                padding: 5px;
+            }
+            .questionContainer > div + div {
+                border-left: 1px solid black;
+            }
+            .answers {
+                /*display: grid;*/
+                /*grid-auto-flow: column;*/
+                /*grid-template-columns: repeat(auto-fill, minmax(100px, 20%));*/
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .answer:before {
+                content: attr(data-letter);
+                FONT-WEIGHT: 600;
+                position: absolute;
+                left: 0px;
+                font-family: Calibri;
+            }
+            .answer {
+                font-family: Courier New;
+                position: relative;
+                padding-left: 20px;
+                flex: 1 1 auto;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            .answer[data-selected="true"] {
+                color: #0080ff;
+            }
+        </style>
+    </head>
+
+    <body></body>
+</html>
